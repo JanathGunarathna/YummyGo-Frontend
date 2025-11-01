@@ -62,7 +62,7 @@ const AddFood = () => {
           </div>
           <div className="mb-3">
             <label htmlFor="description" className="form-label">Food Description</label>
-            <textarea className="form-control" id="description" rows="5" required name='description'onChange={onChangeHandler} value={data.description}></textarea>
+            <textarea className="form-control" placeholder='Write descriotion of the food' id="description" rows="5" required name='description'onChange={onChangeHandler} value={data.description}></textarea>
           </div>
            <div className="mb-3">
             <label htmlFor="category" className="form-label">Food Category</label>
@@ -77,7 +77,7 @@ const AddFood = () => {
           </div>
            <div className="mb-3">
             <label htmlFor="price" className="form-label">Price</label>
-            <input type="number" className="form-control" id="price" required name='price' onChange={onChangeHandler} value={data.price}/>
+            <input type="number" className="form-control" placeholder='100.00' id="price" required name='price' onChange={onChangeHandler} value={data.price}/>
           </div>
           <button type="submit" className="btn btn-primary">Save</button>
         </form>
