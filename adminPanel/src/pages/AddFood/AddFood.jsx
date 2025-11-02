@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { assets } from '../../assets/assets'
-import { data } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { addFood } from '../../services/foodService';
 
 const AddFood = () => {
-  const [image, setImage]= useState(false);
+  const [image, setImage]= useState(null);
   const [data, setData]= useState({
     name:'',
     description:'',
@@ -18,6 +18,8 @@ const AddFood = () => {
     const value= event.target.value;
     setData( data =>({...data, [name]:value}));
   };
+  
+  
   const onSubmitHandler=async (event)=>{
     event.preventDefault();
     console.log(data);
@@ -26,21 +28,20 @@ const AddFood = () => {
       return; 
     }
     try {
-      await AddFood(data,image);
+      await addFood(data, image);
       toast.success("Food Added Successfully");
       setData({
         name:'',
-        description:'',
+        description:'', 
         category:'Kottu',
         price:''
       });
       setImage(null);
       
     } catch (error) {
+      console.log(error);
       toast.error("Error while adding food");
     }
-
-
   };  
 
   return (
