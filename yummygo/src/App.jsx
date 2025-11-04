@@ -4,6 +4,8 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home.jsx';
 import Explore from './pages/Explore/explore.jsx';
 import ContactUs from './pages/ContactUs/Contact.jsx';
+import FoodDetails from './pages/FoodDetails/foodDetails.jsx';
+
 
 const App = () => {
   return (
@@ -13,6 +15,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/food/:id" element={<FoodDetails />} />
       </Routes>
     </div>
   )

@@ -6,10 +6,13 @@ import 'bootstrap/dist/js/bootstrap.bundle.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { BrowserRouter } from 'react-router-dom';
 import React from 'react';
+import { StoreContextProvider } from './context/StoreContex.jsx';
 
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-    <App />
+    <StoreContextProvider>
+        <App/>
+    </StoreContextProvider>
   </BrowserRouter>
 )
