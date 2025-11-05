@@ -7,9 +7,9 @@ const Menubar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container">
-        <a className="navbar-brand" href="#">
-          <img src={assets.logo} alt="Logo" className="logo" height={50} width={50}/>
-        </a>
+        <Link to="/">
+          <img src={assets.logo} alt="Logo" className="logo" height={50} width={50} />
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -40,10 +40,12 @@ const Menubar = () => {
             </li>
             </ul>
           <div className="d-flex align-item-center gap-4">
+           <Link to={"/cart"}>
             <div className="position-relative">
                 <img src={assets.cart} alt="" height={32} width={32} className="position-relative"/>
                 <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">5</span>
             </div>
+            </Link>
             <button className="btn btn-outline-primary ms-3">Sign in</button>
             <button className="btn btn-outline-success">Sign Up</button>
           </div>

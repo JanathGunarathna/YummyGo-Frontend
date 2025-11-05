@@ -2,13 +2,21 @@ import React, { useContext } from 'react'
 import { StoreContext } from '../../context/StoreContex';
 import FoodItem from '../FoodItem/FoodItem';
 
-const FoodDisplay = () => {
+const FoodDisplay = ({ category , searchText }) => {
+
+
+
+
   const { foodList } = useContext(StoreContext);
+  const filteredfoods = foodList.filter(food => {
+    return (category === 'All' || food.category === category) && 
+           food.name.toLowerCase().includes(searchText.toLowerCase());
+  });
   return (
     <div className="container">
       <div className="row">
-        {foodList.length > 0 ? (
-            foodList.map((food, index)=>(
+        {filteredfoods.length > 0 ? (
+            filteredfoods.map((food, index)=>(
               <FoodItem
                 key={index}
                 name={food.name}
